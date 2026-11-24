@@ -1,1 +1,1 @@
-Commit 36: feat(model): train FT-Transformer with cosine annealing learning rate scheduler at 2026-11-24 12:02:40
+Commit 38: feat(ensemble): build soft-voting ensemble combining XGB, LGBM, and FT-Transformer at 2026-11-24 12:14:20
