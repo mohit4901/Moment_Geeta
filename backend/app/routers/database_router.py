@@ -132,23 +132,6 @@ def list_patients(
     risk_tier: Optional[str] = None
 ):
     rows = list_patients_mongo(search=search, user_id=user_id, risk_tier=risk_tier)
-    print(f"🍃 \033[92;1m[MONGODB ATLAS FETCH]\033[0m Query: 'patients' + 'pregnancies' (Filter: user={user_id or 'ALL'}, tier={risk_tier or 'ALL'})")
-    if not rows:
-        print(f"   ↳ ℹ️ Found 0 patient records in MongoDB Atlas.")
-    else:
-        print(f"   ↳ ✅ Successfully fetched {len(rows)} patient record(s) from MongoDB Atlas:")
-        for idx, p in enumerate(rows, 1):
-            p_name = p.get('name') or 'Unknown'
-            p_id = p.get('id')
-            p_age = p.get('age')
-            p_bg = p.get('blood_group')
-            p_hb = p.get('maternal_hemoglobin_gdl')
-            p_tier = p.get('current_risk_tier') or 'ROUTINE'
-            p_pct = p.get('current_risk_percent')
-            pct_str = f"{p_pct:.1f}%" if p_pct is not None else "N/A"
-            ga_str = f"{p.get('gestational_age')} wks" if p.get('gestational_age') else "N/A"
-            hb_str = f"{p_hb} g/dL" if (p_hb is not None and str(p_hb) != "None") else "Lab Pending"
-            print(f"      [{idx}] {p_name} ({p_id}) | Age: {p_age} | Blood: {p_bg} | GA: {ga_str} | Hb: {hb_str} | Risk: {p_tier} ({pct_str})")
     return rows
 
 
@@ -159,7 +142,6 @@ def get_patient(patient_id: str = Path(...)):
 
     patient, pregnancy = get_patient_mongo(patient_id)
     if not patient:
-        print(f"⚠️ \033[91m[MONGODB ATLAS FETCH]\033[0m Patient '{patient_id}' not found in database.")
         raise HTTPException(status_code=404, detail=f"Patient {patient_id} not found")
 
     with get_db() as conn:
@@ -175,15 +157,6 @@ def get_patient(patient_id: str = Path(...)):
 
         cursor.execute("SELECT * FROM risk_assessments WHERE patient_id = ? ORDER BY calculated_at DESC LIMIT 5;", (patient_id,))
         risk_history = cursor.fetchall()
-
-    print(f"🍃 \033[92;1m[MONGODB ATLAS FETCH]\033[0m Loaded patient record: {patient['name']} ({patient['id']})")
-    print(f"   ↳ Demographics: Age: {patient['age']} | Blood Group: {patient['blood_group']} | Phone: {patient.get('contact_phone') or 'N/A'}")
-    if pregnancy:
-        print(f"   ↳ Pregnancy: GA: {pregnancy.get('gestational_age')} wks | Gravida: {pregnancy.get('gravidity')} | Para: {pregnancy.get('parity')} | Hb: {pregnancy.get('maternal_hemoglobin_gdl')} g/dL | Tier: {pregnancy.get('current_risk_tier')}")
-    if latest_vital:
-        print(f"   ↳ Latest Vitals (SQLite): HR {latest_vital.get('heart_rate')} bpm | BP {latest_vital.get('systolic_bp')}/{latest_vital.get('diastolic_bp')} | Shock Index: {latest_vital.get('shock_index')} ({latest_vital.get('shock_tier')})")
-    if latest_blood:
-        print(f"   ↳ Latest Blood Loss (SQLite): {latest_blood.get('volume_ml')} mL ({latest_blood.get('severity_tier')}) via {latest_blood.get('measurement_mode')}")
 
     return {
         "patient": patient,
@@ -715,13 +688,59 @@ async def scan_clinical_report(file: UploadFile = File(...)):
     raw_text = ocr_service.extract_text(contents)
     parsed = ocr_service.parse_clinical_entities(raw_text)
 
-    print(f"📄 \033[94;1m[AI OCR REPORT SCANNER]\033[0m Report Image: {file.filename} ({len(contents)} bytes)")
-    clean_preview = raw_text.strip()[:200].replace('\n', ' ')
-    print(f"   ↳ Raw OCR Text: \"{clean_preview}...\"")
-    print(f"   ↳ Parsed Structured Obstetric Fields:")
+    print("\n" + "═" * 72)
+    print(f"📄 \033[94;1m[AI CLINICAL OCR SCANNER]\033[0m Document: {file.filename} ({len(contents) / 1024:.1f} KB)")
+    
+    # Clean single-line snippet showing document transcription occurred without dumping 100 lines
+    clean_sample = " ".join(raw_text.split()[:22])
+    print(f"   ↳ \033[90mTranscribed Document Snippet: \"{clean_sample}...\" ({len(raw_text)} chars)\033[0m")
+    print(f"   ↳ \033[92;1mParsed Clinical Obstetric Biomarkers:\033[0m")
+
+    label_map = {
+        "name": "Patient Name",
+        "age": "Maternal Age",
+        "gestational_age": "Gestational Age",
+        "gravidity": "Gravida (G)",
+        "parity": "Para (P)",
+        "maternal_hemoglobin_gdl": "Hemoglobin (Hb)",
+        "platelets": "Platelet Count",
+        "blood_group": "Blood Group",
+        "systolic_bp": "Systolic BP",
+        "diastolic_bp": "Diastolic BP",
+        "pulse": "Pulse Rate",
+        "uterine_tone": "Uterine Tone",
+        "prior_csections": "Prior C-Sections",
+        "hypertensive_disorders": "Hypertension (PE)",
+        "gestational_diabetes": "Gestational Diabetes",
+        "coagulation_disorders": "Coagulation Risk",
+        "multiple_births": "Multiple Births",
+    }
+
     for k, v in parsed["extracted_fields"].items():
+        if k in ("raw_text", "ocr_status", "ocr_warning") or k.startswith("raw_"):
+            continue
         if v is not None and v != "":
-            print(f"      • {k}: \033[92m{v}\033[0m (Confidence: {parsed['field_confidence'].get(k, 0):.0%})")
+            conf = parsed.get("field_confidence", {}).get(k, 0)
+            if v == 0 and conf == 0:
+                continue
+            label = label_map.get(k, k.replace("_", " ").title())
+            unit = ""
+            if "hemoglobin" in k:
+                unit = " g/dL"
+            elif "platelet" in k:
+                unit = " /µL"
+            elif "bp" in k:
+                unit = " mmHg"
+            elif "pulse" in k:
+                unit = " bpm"
+            elif "gestational_age" in k:
+                unit = " wks"
+            elif "age" == k:
+                unit = " yrs"
+            val_str = f"{v}{unit}"
+            print(f"      • {label:<22}: \033[92;1m{val_str}\033[0m")
+
+    print("═" * 72 + "\n")
 
     # Save to clinical_reports table
     rep_id = f"REP-{uuid.uuid4().hex[:8].upper()}"

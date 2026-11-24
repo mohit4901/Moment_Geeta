@@ -1,24 +1,61 @@
-# Large dataset archives & binary databases
+# Environment variables & Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+ai/node_modules/
+.pnp
+.pnp.js
+
+# Large Data Files & Raw Datasets
+ai/data/*.zip
+ai/data/**/*.zip
+ai/data/**/*.dta
+ai/data/**/*.DTA
+ai/data/raw/
+ai/data/borealis/
+*.parquet
 *.zip
 *.tar
 *.tar.gz
 *.dta
 *.DTA
-*.parquet
-ai/data/borealis/
-ai/data/*.zip
-ai/data/**/*.zip
-
-# Dependencies
-node_modules/
-frontend/node_modules/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv
+venv/
+ENV/
+env/
 
 # Build artifacts
 frontend/dist/
 frontend/dist-ssr/
+*.tsbuildinfo
 .vite/
 
-# Database files
+# Database files & local SQLite logs
 *.sqlite
 *.sqlite3
 *.db
@@ -28,21 +65,25 @@ frontend/dist-ssr/
 backend/app/data/*.db*
 backend/moment.db
 
-# Python caches
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.venv
-venv/
-env/
-.Python
-
-# OS & Editor
+# OS Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor files
 .vscode/
 .idea/
 *.swp
+*.swo
+
+# Temporary and Scratch logs
 *.log
-.env
-.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
