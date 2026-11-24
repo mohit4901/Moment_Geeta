@@ -1,1 +1,1 @@
-Commit 44: feat(eval): compute Brier calibration score and expected calibration error at 2026-11-24 12:50:20
+Commit 45: feat(xai): integrate SHAP values for clinical feature attribution explainability at 2026-11-24 12:56:40
