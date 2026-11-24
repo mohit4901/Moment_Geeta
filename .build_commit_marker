@@ -1,1 +1,1 @@
-Commit 31: feat(model): configure LightGBM leaf-wise splitting and learning rate at 2026-11-24 11:32:00
+Commit 34: feat(model): add Feature Tokenizer for numerical and categorical clinical features at 2026-11-24 11:50:00
