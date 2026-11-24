@@ -1,0 +1,522 @@
+,Baseline ,,,
+,General information ,,,
+Age ,19-30,6574,,
+, 31-40,5377,,
+, 41-55,294,,
+,,,,
+Marital history,Married,"12,228",,
+,Others,17,,
+,,,,
+Religion,Christian,281,,
+,Hindu,3230,,
+,Muslim,519,,
+,Others ,9,,
+,,,,
+Blood group,O -ve,272,,
+,O +ve,4609,,
+,A -ve,158,,
+,A +ve,2151,,
+,B -ve,286,,
+,B +ve,3923,,
+,AB -ve,45,,
+,AB +ve,795,,
+,Social framework,,,
+Occupation of the patient,Ever,6385,,
+,Currently,1115,,
+,Not gainfully employed,4744,,
+,,,,
+Occupation of the husband,Ever,3393,,
+,Currently,8811,,
+,Not gainfully employed,40,,
+,,,,
+Occupation of the head of the family,Unemployed,1032,,
+,Elementary occupation,2382,,
+,Plant & Machine Operators and Assemblers,673,,
+,Craft & Related trade workers,1089,,
+,Skilled agricultural & Fishery workers,864,,
+,Skilled workers and shop & Market sales workers,1750,,
+,Clerks,459,,
+,Technicians and associate professions,2024,,
+,Professionals,1796,,
+,Legislators & Senior officials & Managers,176,,
+,,,,
+Monthly Income,"<10,001",1153,,
+,"10,002-29,972",5798,,
+,"29,973-49,961",2870,,
+,"49,962- 74,755",1480,,
+,"74,756- 99,930",568,,
+,"99,931- 199,861",311,,
+,">=199,862",65,,
+,,,,
+Final socio-economic score ,Low,534,,
+,Middle,11617,,
+,High,94,,
+,,,,
+,Details of delivery ,,,
+Obstetric score G,1,6090,,
+,2,3852,,
+,3,1532,,
+,4,549,,
+,5,158,,
+,6,47,,
+,>7,13,,
+,,,,
+Obstetric score P,0,7179,,
+,1,4093,,
+,2,806,,
+,3,136,,
+,>4,31,,
+,,,,
+Obstetric score L,0,7400,,
+,1,4106,,
+,2,649,,
+,3,77,,
+,>4,13,,
+,,,,
+GA at delivery ,21-30,270,,
+,31-36,1439,,
+,37-41,10536,,
+,,,,
+BMI,13-18,300,,
+,19-25,1110,,
+,26-30,833,,
+,31-58,914,,
+,,,,
+Past Medical history,"Acute febrile illness (Dengue, Enteric fever, Malaria, Scrub Typhus, URI, UTI)",12,,
+,Acute pulmonary edema,7,,
+,Appendictis,3,,
+,Bronchial Asthma,242,,
+,Cardiac disorder,162,,
+,Connective tissue disorder,71,,
+,Deep vein thrombosis,22,,
+,Endocrine disorder,1649,,
+,Gastrointestinal disorder ,11,,
+,Haematological disorder,88,,
+,Hepatological disorder,90,,
+,Neurological disorder,40,,
+,Psychiatric disorder,30,,
+,Pulmonary Disorder,23,,
+,Renal disorder,42,,
+,Seizures,128,,
+,Tuberculosis,47,,
+,,,,
+Surgical history,Appendectomy,83,,
+,Bowel surgery,7,,
+,Cardiac surgery,56,,
+,Cholelithiaisis Medical & surgical ,18,,
+,Gynaecological surgery,206,,
+,Hernia repair,11,,
+,Laparotomy,60,,
+,Myomectomy,28,,
+,Neuro surgery,11,,
+,Spine surgery,8,,
+,Surgery for breast disease,23,,
+,Thyroidectomy,17,,
+,Tonsilitis,7,,
+,Oro facial surgery,28,,
+,Orthopaedic surgery,16,,
+,Anorectal surgery,8,,
+,Nephro surgery,12,,
+,Surgery for carcinoma,5,,
+,,,,
+Medical risk (Current),"Acute febrile illness (Dengue, Enteric fever, Malaria, Scrub Typhus, URI, UTI)",75,,
+,Acute pulmonary edema,6,,
+,Anemia,2121,,
+,Cardiomyopathy,9,,
+,Eclampsia,35,,
+,Hepatological disorder,109,,
+,,,,
+Obstetric risk,Abnormal Dopplers,23,,
+,Absent fetal movements,51,,
+,Anomalous fetus,372,,
+,APH,167,,
+,Fibroid complicating pregnancy,129,,
+,Grand multipara,23,,
+,"Infertility (IUI, IVF)",345,,
+,Large for gestational age (LGA),253,,
+,IUGR with abnormal dopplers,107,,
+,Multiple gestation ,85,,
+,Ovarian cyst complicating pregnancy,31,,
+,Postdate,1206,,
+,Post successful ECV,22,,
+,PROM,808,,
+,Reduced fetal movements,125,,
+,Rh isoimmunisation,121,,
+,Uterine anomaly,54,,
+,Multiple pregnancy twins at preterm,58,,
+,,,,
+Epidural in labour ,Yes,384,,
+,No,1923,,
+,,,,
+Blood transfustion,Yes,560,,
+,No,11685,,
+,,,,
+Type of blood transfusion,Antepartum,21,,
+,Intrapartum,68,,
+,Postpartum,486,,
+,,,,
+Reason for blood transfusion,Anaemia,335,,
+,Blood loss during intrapartum PPH,214,,
+,Placenta previa,12,,
+,Abruptio placenta,8,,
+,DIC due to causes other than above,26,,
+,,,,
+No of delivery,1,11922,,
+,2,314,,
+,3,9,,
+,,,,
+Third or fourth degree tear ,Third or fourth degree tear (with or without episiotomy),104,,
+,,,,
+Breech,Breech without episiotomy,13,,
+,Perineal tear-1st,5,,
+,Perineal tear-2nd,18,,
+,If breech perineal tear,24,,
+,Total,60,,
+,,,,
+Caesarean,LSCS,4026,,
+,Classical,9,,
+,Extended LSCS,4,,
+,Total,4039,,
+,Details at discharge ,,,
+Postpartum complication,"Acute febrile illness (Dengue, Enteric fever, Malaria, Scrub Typhus, URI, UTI)",1224,,
+,Acute pulmonary edema,12,,
+,Eclampsia,13,,
+,Hepatological disorders,29,,
+,Peritonitis,9,,
+,Pneumonia,4,,
+,"Postpartum collapse (Myocardial infraction, Peripartum Cardiomyopathy, Rhythm abnormalities, Amniotic fluid embolism, Hupoglycemia, RHD/ CHD? Severe anemia in failure",11,,
+,Postpartum depression,10,,
+,Postpartum psychosis,7,,
+,Pulmonary Embolism,6,,
+,Pyelonephritis,7,,
+,Retained Placenta,10,,
+,"Secondary Postpartum haemorrhage Retained placental bits, AV malformation, Endometritis",15,,
+,,,,
+Intrapartum complication,"APH (vasa previa, Abruption grade I/ II/ III, Placenta previa, unclassified)",18,,
+,Cord prolapse,8,,
+,Hepatological disorders,24,,
+,Seizures,8,,
+,Shoulder dystocia,11,,
+,Adherent placenta,10,,
+,,,,
+Surgical management,"Subtotal Hysterectomy, B Lynch, Total hysterectomy",14,,
+,Laprotomy for other procedures,15,,
+,Relaprotomy,15,,
+,,,,
+Type of anaesthesia,Spinal ,9,,
+,GA,36,,
+,,,,
+Need for ICU care,Yes,274,,
+,No,1765,,
+,,,,
+Treated with antibiotics empirically,Yes,1361,,
+,No,680,,
+,,,,
+Treated with antibiotics after culture,Yes,514,,
+,No,1526,,
+,,,,
+Release of pus,Yes,180,,
+,No,1859,,
+,,,,
+Postnatal HB value,"5,6,7,8",1381,,
+,"9,10,11,12",9559,,
+,13-18,559,,
+,,,,
+Catheterized,Yes,354,,
+,No,11891,,
+Reason for catheterisation,For LSCS,310,,
+,Urinary rentension,36,,
+,Urinary incontience,8,,
+,For laparotomy,3,,
+,,,,
+Urinary symptoms,Retention and on CBD,35,,
+,Passing urine before reaching the toilet,2,,
+,Difficulty in starting micturition or straining,6,,
+,Increased frequency with dribbling,4,,
+,,,,
+Patient was sent on CBD,Yes,18,,
+,No,17,,
+,,,,
+Straining,15-30min,33,,
+,30-45 min,11,,
+,,,,
+Bowel habits,Yes,5,,
+,No,12239,,
+,Mental health ,,,
+Opprtunity to discuss your psychological concerns,Yes,1741,,
+,No,2298,,
+,,,,
+Fear of COVID 19,Yes,112,,
+,No,3927,,
+,,,,
+Unhealthy practies,Medical ,234,,
+,Non medical,525,,
+,None,11481,,
+Unhealthy practies : Medical,Fluid intake reduced,107,,
+,Husband prevented from visiting,63,,
+,Prevented from going out,64,,
+Unhealthy practies: Mnon medical,Untouchables,72,,
+,Food habits abnormal,453,,
+,,,,
+Family history ,Mental illness,20,,
+,Suicide,1,,
+,None,12186,,
+,,,,
+Risk factor assessment (Final score),<3,12187,,
+,>3,58,,
+NICE Questionnaire,>50,268,,
+,<=50,11977,,
+,,,,
+,Neonate ,,,
+Baby status,Neonate ,,,
+,Alive,12271,,
+,Dead,306,,
+If dead baby specify,Still born,241,,
+,END,65,,
+NICU admissions,Yes,200,,
+,No,12053,,
+,Not applicable,324,,
+,,,,
+,Visit's,,,
+,,Visit 1,,
+Visited hospital ,Parent hospital,3900,,
+,Other hospital,7954,,
+Compliance of special visit,Yes ,5816,,
+,No,1823,,
+Reason for special visit,GDM on insulin / OHA,351,,
+,Hypertension ,324,,
+,Mental health,2,,
+,Suture removal LSCS/ APS,3123,,
+,Cardiac disease,32,,
+,Preterm,191,,
+,Baby reason,1917,,
+,Pospartum morbidity,967,,
+,Thyroid disorder,146,,
+,Wound related issues,129,,
+,,Visit 1,,
+Unscheduled visit,Yes,5616,,
+,No,6459,,
+No of unscheduled visit,1visit,2913,,
+,2 visit,1234,,
+,3 visit ,619,,
+,> 3 visit,522,,
+,,Visit 1,,
+Total amount spent on all unschedualed visit,1000,4043,,
+,1000-5000,1150,,
+,>5000,383,,
+,,Visit 1,,
+Unscheduled visit reason,Mother,1121,,
+,Baby,3554,,
+,Mother + baby ,941,,
+,Maternal Medical conditions,,,
+,,Visit 1,Visit 2,Visit 3
+Anemia repeat Hb,<10,267,142,62
+,>10,6307,2483,2448
+Fatigue/ weakness,Yes,1148,872,659
+,No,10926,10771,8991
+Clinical pallor,Yes,2111,109,24
+,No,9675,11102,9535
+,,Visit 1,,
+Sugar level Fasting,70-99,175,,
+,>99,50,,
+Sugar level postprandial,60-140,195,,
+,>140,38,,
+,,Visit 1,Visit 2,Visit 3
+SBP,<80-120,6345,4997,4097
+,120-129,1004,554,435
+,130-139,127,225,174
+,>140,201,46,28
+DBP,<80,5265,4053,3850
+,80-89,1837,1499,740
+,>90,575,270,142
+,,,,
+BMI,13-18,581,515,399
+,19-25,3624,2639,2188
+,26-30,2323,1777,1453
+,31-58,1278,920,710
+,Maternal Physical conditions,,,
+Musculoskeletal pain ,Yes,3716,2666,1851
+,No,8355,8679,7793
+,,,,
+Musculoskeletal pain Specify,Back pain ,3212,2337,1629
+,Limbs pain,420,406,413
+,Knees pain,631,473,395
+,Other Skeletal pain ,180,52,8
+,,,,
+Pain at wound site,Yes,405,154,49
+,No,11655,11177,9595
+,,,,
+Normal menstrual cycle resumed ,Yes ,5621,10326,930
+,No,6455,1017,92
+,,,,
+If Yes resumed after,1Month,2294,6142,132
+,2 Month,1055,1106,192
+,3 Month,1413,2245,586
+,> 3 Month,859,735,18
+,,,,
+Painful periods ,Yes,174,247,16
+,No,5422,10048,911
+,,,,
+Abnormal vaginal discharge,Yes,268,203,125
+,No,11812,11146,9523
+,,,,
+Urinary problems,Yes,91,44,48
+,No,11993,11301,9599
+,,,,
+If UTI diagnosed ,antibiotics used,16,6,5
+,,,,
+Urinary leakage,Yes ,177,239,173
+,No,11904,11103,9472
+,,,,
+If Yes Specify,When bending,7,4,2
+,Coughing/ sneezing,138,206,151
+,Before reaching the toilet,32,28,19
+,,,,
+Abnormal bowel habits,Yes,227,58,29
+,No,11848,11287,9615
+,,,,
+If yes Specify incontinence,Yes,0,0,0
+,No,227,58,31
+,,,,
+Constipation,Yes,227,58,31
+,No,0,0,0
+,Breastfeeding Details,,,
+Breast feeding,Yes,11683,10190,5400
+,No,276,1065,4187
+,,,,
+"If no, specify reason",Maternal reason,105,878,3258
+,Baby reasons,145,185,991
+,,,,
+If maternal reason Specify,Resumed to Job ,0,75,453
+,Scanty breast milk,80,745,2638
+,Significant illness in mother/ Mastitis,7,46,161
+,Pregnant,0,4,2
+,Others,18,25,89
+,,,,
+If baby reason specify,Introduction of complementary feeds /formula/ Improper techniques,7,79,905
+,Sick baby,44,45,43
+,,,,
+Pumping the breast milk and storing,Yes,346,0,0
+,No,11327,0,0
+,,,,
+Have you started complementary feeds?.,Yes,0,10962,0
+,No,0,98,0
+,,,,
+,Contraception,,,
+Using any contraception method,Yes,785,2929,2959
+,No,9126,6988,6337
+,,,,
+Contraception methods specify,Condom,436,1680,1755
+,Abstinence,124,887,799
+,OCP,10,20,19
+,Injectable,25,24,21
+,Male sterilisation,2,3,4
+,Interval sterilization,111,182,228
+,Copper T,52,115,122
+,Others,23,12,9
+,,,,
+Wants contraception,Yes,484,177,139
+,No,8638,6789,6187
+If no reason ,scared of side effects,62,96,50
+,Don't have regular sex and so not concerned,562,595,376
+,want to have the next baby soon as had difficult conceiving/elderly,121,564,759
+,family not willing,99,36,7
+,Have not thought about it,7706,5439,4968
+,others - specify,88,128,68
+If yes method,IUCD,2,0,0
+,Injectable,19,5,2
+,CuT,60,12,4
+,Condom,108,24,9
+,Abstinence,45,11,1
+,OCP,16,5,1
+,Permanent sterilization,231,7,1
+,male sterilization/ baby reason ,3,120,120
+,,,,
+Contraception type,Permanent,0,214,234
+,Reversible,0,2712,2724
+,,,,
+If reversible what contraception are using,CuT,0,92,105
+,Injectable,0,21,20
+,Condoms,0,1597,1645
+,Abstinence,0,970,927
+,Others,0,32,27
+,,,,
+If CUT,Heavy bleeding,0,13,7
+,dysmenorrhea,0,4,0
+,intermenstrual bleeding,0,2,2
+,discharge,0,2,0
+,others,0,7,6
+,,,,
+If injectables,Weight gain,0,4,2
+,Irregular bleeding that is troublesome,0,7,7
+,Others,0,10,11
+,Sexual history,,,
+Resume your sexual life,Yes,2327,8490,8320
+,No,9750,2860,1413
+If yes reason,on compulsion,42,77,33
+,of own interest,2284,8410,8193
+,,,,
+If no: Reason,Dypareunia,10,6,1
+,Loss of libido,7,29,31
+,Prevented from living together because of culture,721,62,12
+,Family dispute,16,19,22
+,Lack of time,138,136,72
+,For Health betterment,7001,1343,403
+,Fear of episiotomy wound gaping,84,8,1
+,Separated due to occupation,1121,630,375
+,Fear of further pregnancy,652,669,491
+,Nutrition history,Visit 1,,
+Diet,Unhealthy,72,,
+,Healthy,11992,,
+Calories,Adequate,11796,,
+,Less than needed,110,,
+,More than needed,141,,
+,,Visit 3,,
+Vegetable protein sources,Pulses/ Dal,9464,,
+,Milk,6730,,
+,Milk products,7417,,
+,Sry fruits,7148,,
+,"Other (soya, protein powder, etc)",386,,
+,,Visit 3,,
+Water restriction,Yes,3981,,
+,No,5662,,
+,,,,
+would this woman and child benefit from a visit before 14 weeks,Yes,1919,,
+,No,10157,,
+"if yes, which aspect",Maternal medical,1455,,
+,maternal mental,69,,
+,neonatal care,1510,,
+,contraception,43,,
+,breastfeeding,186,,
+,Social support,Visit 1,,
+ÿPlace of postnatal stay,Mother's house,8384,,
+,In-Law's house,3080,,
+,Own house,611,,
+Financial support from,Husband,7438,,
+,Maternal,6847,,
+,Self,718,,
+Family APGAR score ,<3,27,,
+,4 to 7,220,,
+,>7,11812,,
+Unhealthy practices,Yes,5347,,
+,No,6571,,
+"If yes, specify",Mother,4464,,
+,Baby,3193,,
+Mother,Avoiding certain foods in the diet,4024,,
+,"Not bathing for few days in the initial days,",595,,
+,"Prevented from feeding their babies Due to certain taboos,",28,,
+,Advised to consume certain foods in large quantity,3463,,
+,,,,
+Baby,"Oil on ears eyes nose etc,",655,,
+,Adding supplementary food along with breastfeeding,634,,
+,Drinking water holy water,466,,
+,Pouring sugar water in mouth,2020,,
+,Preventing the baby from taking bath in the first few days,672,,
+,Mental health,Visit 1,Visit 2,Visit 3
+EPDS score ,<=8,11709,11170,9563
+,>8,350,159,81
+PSS,<=13,11831,11249,9629
+,>13,305,95,26
+,Neonate,Visit 1,,
+Baby,Alive,12066,,
+,Died,337,,
