@@ -1,0 +1,48 @@
+# Large dataset archives & binary databases
+*.zip
+*.tar
+*.tar.gz
+*.dta
+*.DTA
+*.parquet
+ai/data/borealis/
+ai/data/*.zip
+ai/data/**/*.zip
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build artifacts
+frontend/dist/
+frontend/dist-ssr/
+.vite/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+backend/app/data/*.db*
+backend/moment.db
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv
+venv/
+env/
+.Python
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.log
+.env
+.env.local
