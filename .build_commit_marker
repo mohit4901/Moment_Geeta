@@ -1,1 +1,1 @@
-Commit 43: feat(eval): compute ROC-AUC and PR-AUC validation metrics at 2026-11-24 12:45:00
+Commit 44: feat(eval): compute Brier calibration score and expected calibration error at 2026-11-24 12:50:20
