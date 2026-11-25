@@ -7,6 +7,8 @@ import AlertCenterModal from './components/AlertCenterModal';
 import AuditLogModal from './components/AuditLogModal';
 import AnimatedWaveFooter from './components/AnimatedWaveFooter';
 import BedsideCamView from './components/BedsideCamView';
+import PregnancyDietPlanPage from './components/PregnancyDietPlanPage';
+import WomenDietPlanPage from './components/WomenDietPlanPage';
 import { fetchHealth, fetchAlerts, getAuthUser, logoutStaff } from './api/client';
 import { AlertOctagon, ArrowRight, HeartPulse, Bell, Users, ShieldAlert } from 'lucide-react';
 import i18n from './i18n/i18n';
@@ -24,11 +26,11 @@ export default function App() {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const viewParam = urlParams.get('view');
-      if (viewParam && ['landing', 'registry', 'clinical'].includes(viewParam)) {
+      if (viewParam && ['landing', 'registry', 'clinical', 'pregnancy-diet', 'women-diet'].includes(viewParam)) {
         return viewParam;
       }
       const savedView = localStorage.getItem('moment_current_view');
-      if (savedView && ['landing', 'registry', 'clinical'].includes(savedView)) {
+      if (savedView && ['landing', 'registry', 'clinical', 'pregnancy-diet', 'women-diet'].includes(savedView)) {
         return savedView;
       }
       // If staff user is logged in, default directly to clinical dashboard!
@@ -210,6 +212,16 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleOpenPregnancyDiet = () => {
+    setCurrentView('pregnancy-diet');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenWomenDiet = () => {
+    setCurrentView('women-diet');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleLoginSuccess = (user) => {
     setCurrentUser(user);
     if (user.role) {
@@ -271,12 +283,28 @@ export default function App() {
           onOpenRegistry={handleOpenRegistry}
           onOpenAuthModal={() => setShowAuthModal(true)}
           onOpenAlertsModal={() => setShowAlertsModal(true)}
+          onOpenPregnancyDiet={handleOpenPregnancyDiet}
+          onOpenWomenDiet={handleOpenWomenDiet}
           currentUser={currentUser}
           userRole={userRole}
           setUserRole={setUserRole}
           lang={lang}
           setLang={setLang}
           backendStatus={backendStatus}
+        />
+      ) : currentView === 'pregnancy-diet' ? (
+        <PregnancyDietPlanPage
+          onBackToLanding={handleBackToLanding}
+          onOpenWomenDiet={handleOpenWomenDiet}
+          lang={lang}
+          setLang={setLang}
+        />
+      ) : currentView === 'women-diet' ? (
+        <WomenDietPlanPage
+          onBackToLanding={handleBackToLanding}
+          onOpenPregnancyDiet={handleOpenPregnancyDiet}
+          lang={lang}
+          setLang={setLang}
         />
       ) : currentView === 'registry' ? (
         <div className="flex-1 bg-slate-50/50 py-8">

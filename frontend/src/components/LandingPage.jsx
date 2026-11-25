@@ -28,6 +28,8 @@ import {
 import { fetchPatients, fetchNearbyFacilities } from '../api/client';
 import ReferralHospitalsModal from './ReferralHospitalsModal';
 import LanguagePickerTrigger from './LanguagePickerTrigger';
+import HeroSection from './HeroSection';
+import DietaryPlansSection from './DietaryPlansSection';
 import { t as translate } from '../i18n/languages';
 
 export default function LandingPage({
@@ -36,6 +38,8 @@ export default function LandingPage({
   onOpenRegistry,
   onOpenAuthModal,
   onOpenAlertsModal,
+  onOpenPregnancyDiet,
+  onOpenWomenDiet,
   currentUser,
   userRole = 'anm',
   setUserRole,
@@ -399,8 +403,19 @@ export default function LandingPage({
       )}
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col justify-center py-6 sm:py-10 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <main className="flex-1 flex flex-col justify-start pb-2 sm:pb-4">
+        <HeroSection
+          str={str}
+          currentUser={currentUser}
+          lang={lang}
+          onStartAssessment={onStartAssessment}
+          onOpenDashboard={onOpenDashboard}
+          onOpenAuthModal={onOpenAuthModal}
+          onOpenStaffModal={() => (onOpenAuthModal ? onOpenAuthModal() : setShowStaffModal(true))}
+          onOpenAlerts={() => (onOpenAlertsModal ? onOpenAlertsModal() : setShowAlertsModal(true))}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6 md:mt-0">
 
           {/* ── MOBILE QUICK ACTION CARDS (DIRECTLY VISIBLE ON PHONES!) ── */}
           <div className="md:hidden mb-6 grid grid-cols-3 gap-2">
@@ -440,278 +455,14 @@ export default function LandingPage({
               <span className="text-[9px] text-rose-700 font-black mt-0.5">Live AI</span>
             </button>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            
-            {/* LEFT: Realistic Smartphone Mockup */}
-            <div className="lg:col-span-4 flex justify-center order-2 lg:order-1">
-              <div className="w-[300px] sm:w-[320px] rounded-[44px] bg-slate-900 p-3 shadow-2xl ring-1 ring-slate-900/10 transform transition-transform hover:scale-[1.01]">
-                {/* Phone Outer Shell */}
-                <div className="relative bg-white rounded-[36px] overflow-hidden border border-slate-200">
-                  {/* Status Bar */}
-                  <div className="bg-white px-6 pt-3 pb-1 flex items-center justify-between text-[11px] font-semibold text-slate-800 border-b border-slate-50">
-                    <span>09:41</span>
-                    {/* Dynamic Island / Camera Notch */}
-                    <div className="w-18 h-3.5 bg-slate-900 rounded-full mx-auto"></div>
-                    <div className="flex items-center space-x-1.5 text-slate-700">
-                      <span className="text-[10px]">5G</span>
-                      <div className="w-4 h-2 rounded-xs border border-slate-700 flex items-center p-0.5">
-                        <div className="w-full h-full bg-slate-800 rounded-xs"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Phone Screen Body */}
-                  <div className="p-4 space-y-3.5 bg-slate-50/60 min-h-[390px]">
-                    {/* Title */}
-                    <div>
-                      <h4 className="text-base font-extrabold text-slate-900">
-                        {str.phoneTitle}
-                      </h4>
-                      <p className="text-xs text-slate-500 font-medium">
-                        {str.phoneWeeks}
-                      </p>
-                    </div>
-
-                    {/* Red High Risk Card */}
-                    <div className="bg-rose-50 border border-rose-200/90 rounded-2xl p-3.5 space-y-2 shadow-xs">
-                      <div className="flex items-center justify-between">
-                        <span className="bg-red-700 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                          {str.phoneHighRisk}
-                        </span>
-                        <span className="text-xs font-bold text-rose-800">
-                          {str.phoneScore}
-                        </span>
-                      </div>
-                      <div className="space-y-1 text-xs text-rose-950 font-medium pt-1">
-                        <p className="font-semibold text-red-900">• {str.phoneFactor1}</p>
-                        <p className="text-rose-800 text-[11px]">• {str.phoneFactor2}</p>
-                      </div>
-                    </div>
-
-                    {/* Preparedness Checklist Card */}
-                    <div className="bg-white border border-slate-200 rounded-2xl p-3.5 space-y-2.5 shadow-xs">
-                      <h5 className="text-xs font-bold text-slate-900">
-                        {str.phoneChecklist}
-                      </h5>
-                      <div className="space-y-2 text-xs">
-                        <div className="flex items-center space-x-2 text-emerald-700 font-medium">
-                          <div className="w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                            <Check className="w-2.5 h-2.5 text-emerald-700 stroke-[3]" />
-                          </div>
-                          <span className="text-[11px] text-slate-800">{str.phoneCheck1}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-emerald-700 font-medium">
-                          <div className="w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                            <Check className="w-2.5 h-2.5 text-emerald-700 stroke-[3]" />
-                          </div>
-                          <span className="text-[11px] text-slate-800">{str.phoneCheck2}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-emerald-700 font-medium">
-                          <div className="w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                            <Check className="w-2.5 h-2.5 text-emerald-700 stroke-[3]" />
-                          </div>
-                          <span className="text-[11px] text-slate-800">{str.phoneCheck3}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Phone Home Bar */}
-                  <div className="bg-white py-2 flex justify-center">
-                    <div className="w-24 h-1 bg-slate-300 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* CENTER: Hero Copy & CTA Buttons */}
-            <div className="lg:col-span-4 text-center lg:text-center order-1 lg:order-2 space-y-6">
-              <div className="space-y-2">
-                <h1 className="text-4xl sm:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.1]">
-                  <span>{str.heroTitle1}</span>
-                  <br />
-                  <span>{str.heroTitle2}</span>
-                </h1>
-                <p className="text-slate-600 text-sm sm:text-base font-normal max-w-md mx-auto pt-2 leading-relaxed">
-                  {str.heroSubtitle}
-                </p>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                <button
-                  onClick={() => {
-                    if (!currentUser && onOpenAuthModal) onOpenAuthModal();
-                    else onStartAssessment();
-                  }}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-red-700 hover:bg-red-800 text-white font-bold text-sm shadow-lg shadow-red-700/25 transition-all hover:scale-102 active:scale-98 cursor-pointer"
-                >
-                  {str.startAssessment}
-                </button>
-                <button
-                  onClick={() => {
-                    if (!currentUser && onOpenAuthModal) onOpenAuthModal();
-                    else onOpenDashboard();
-                  }}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold text-sm shadow-xs transition-all hover:scale-102 active:scale-98 cursor-pointer"
-                >
-                  {str.viewDashboard}
-                </button>
-              </div>
-            </div>
-
-            {/* RIGHT: ANM Staff Session Card OR Authentication Box */}
-            <div className="lg:col-span-4 flex justify-center order-3">
-              {currentUser ? (
-                <div className="w-full max-w-sm bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-xl shadow-slate-200/50 space-y-4">
-                  {/* Active Session Box */}
-                  <div className="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 flex items-center space-x-3.5">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-800 text-white flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-xs">
-                      {currentUser.full_name ? currentUser.full_name[0].toUpperCase() : 'U'}
-                    </div>
-                    <div className="space-y-0.5 overflow-hidden">
-                      <div className="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>{currentUser.role ? `${currentUser.role} • ${lang === 'hi' ? 'सक्रिय सत्र' : 'Active Session'}` : str.anmBadge}</span>
-                      </div>
-                      <h3 className="font-extrabold text-sm text-slate-900 truncate">
-                        {currentUser.full_name || str.staffName}
-                      </h3>
-                      <p className="text-[11px] text-slate-500 truncate font-medium">
-                        {currentUser.facility_name || str.subCentre}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Primary Red CTA Button */}
-                  <button
-                    onClick={() => onOpenDashboard()}
-                    className="w-full py-3.5 px-4 rounded-xl bg-[#b91c1c] hover:bg-[#991b1b] text-white font-extrabold text-sm shadow-md shadow-red-900/20 transition-all flex items-center justify-center space-x-2 group cursor-pointer"
-                  >
-                    <span>{str.openDashboardBtn}</span>
-                  </button>
-
-                  {/* Secondary Staff Switcher Link */}
-                  <div className="text-center pt-1">
-                    <button
-                      onClick={() => (onOpenAuthModal ? onOpenAuthModal() : setShowStaffModal(true))}
-                      className="text-xs text-slate-500 hover:text-slate-800 font-medium transition-colors cursor-pointer"
-                    >
-                      {str.switchStaff}
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="w-full max-w-sm bg-white rounded-3xl border-2 border-dashed border-red-300 p-5 sm:p-6 shadow-xl shadow-slate-200/50 space-y-4 text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-red-700 mx-auto">
-                    <UserCheck className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h3 className="font-extrabold text-base text-slate-900">
-                      {str.staffAuthReq}
-                    </h3>
-                    <p className="text-xs text-slate-500 mt-1">
-                      {str.staffAuthSub}
-                    </p>
-                  </div>
-
-                  {/* Primary Red Login CTA Button */}
-                  <button
-                    onClick={onOpenAuthModal}
-                    className="w-full py-3.5 px-4 rounded-xl bg-red-700 hover:bg-red-800 text-white font-extrabold text-xs shadow-md shadow-red-900/20 transition-all flex items-center justify-center space-x-2 group cursor-pointer"
-                  >
-                    <span>🔐 {str.staffLoginBtn}</span>
-                  </button>
-
-                  <p className="text-[11px] text-slate-400 font-medium">
-                    {str.ocrBadge}
-                  </p>
-                </div>
-              )}
-            </div>
-
-          </div>
         </div>
 
-        {/* BOTTOM FEATURE PILL CARDS (4 in a row) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-14">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            
-            {/* Feature 1 */}
-            <div
-              onClick={onStartAssessment}
-              className="bg-white border border-slate-200/90 rounded-2xl p-4 flex items-center space-x-3.5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all cursor-pointer group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <Sparkles className="w-5 h-5 text-indigo-600" />
-              </div>
-              <div className="text-left">
-                <div className="text-xs font-bold text-slate-900 leading-tight">
-                  {str.feature1Title}
-                </div>
-                <div className="text-[11px] text-slate-500 font-medium">
-                  {str.feature1Sub}
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 2 */}
-            <div
-              onClick={() => onOpenDashboard()}
-              className="bg-white border border-slate-200/90 rounded-2xl p-4 flex items-center space-x-3.5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all cursor-pointer group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <HeartPulse className="w-5 h-5 text-rose-600" />
-              </div>
-              <div className="text-left">
-                <div className="text-xs font-bold text-slate-900 leading-tight">
-                  {str.feature2Title}
-                </div>
-                <div className="text-[11px] text-slate-500 font-medium">
-                  {str.feature2Sub}
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 3 */}
-            <div
-              onClick={() => setShowAlertsModal(true)}
-              className="bg-white border border-slate-200/90 rounded-2xl p-4 flex items-center space-x-3.5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all cursor-pointer group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <Ambulance className="w-5 h-5 text-amber-600" />
-              </div>
-              <div className="text-left">
-                <div className="text-xs font-bold text-slate-900 leading-tight">
-                  {str.feature3Title}
-                </div>
-                <div className="text-[11px] text-slate-500 font-medium">
-                  {str.feature3Sub}
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 4 */}
-            <div
-              onClick={() => onOpenDashboard()}
-              className="bg-white border border-slate-200/90 rounded-2xl p-4 flex items-center space-x-3.5 shadow-xs hover:shadow-md hover:border-slate-300 transition-all cursor-pointer group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <ShieldCheck className="w-5 h-5 text-teal-600" />
-              </div>
-              <div className="text-left">
-                <div className="text-xs font-bold text-slate-900 leading-tight">
-                  {str.feature4Title}
-                </div>
-                <div className="text-[11px] text-slate-500 font-medium">
-                  {str.feature4Sub}
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
+        {/* New Dietary Plans Section (After Hero, Before Footer) */}
+        <DietaryPlansSection
+          onOpenPregnancyDiet={onOpenPregnancyDiet}
+          onOpenWomenDiet={onOpenWomenDiet}
+          lang={lang}
+        />
       </main>
 
       {/* MODAL: Patients Directory (DATABASE-DRIVEN) */}
